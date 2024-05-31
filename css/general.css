@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #0c0c23;
+  --bg-color: #f9f7f5;
+  --secondary-color: #fedb79;
+}
+
 body,
 h1,
 h2,
@@ -21,9 +27,10 @@ ul {
 }
 
 body {
-  background: #faf6ed;
-  color: #222;
+  background: var(--bg-color);
+  color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
 }
 
 .grid-container {
@@ -35,26 +42,47 @@ body {
   grid-column: 3 / 5;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background: #fb5;
+  background: var(--secondary-color);
 }
 
 .navbar ul {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
+  gap: 10px;
 }
 
 .navbar li a {
   display: block;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-right: 10px;
-  color: #222;
+  color: #0c0c23;
   text-decoration: none;
-  font-family: "IBM Plax Mono", monospace;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: inline-block;
+  position: absolute;
+  background: var(--primary-color);
+  bottom: 0;
+  transition: all 0.3s !important;
+}
+
+.nav-link:hover::before {
+  width: 80%;
 }
 
 .grid-section {
@@ -68,7 +96,7 @@ body {
 }
 
 .title {
-  font-family: "Playfair Display SC", georgia;
+  font-family: "Della Respira", Georgia, "Times New Roman", Times, serif;
   font-size: 6rem;
   line-height: 1;
   font-weight: 400;
@@ -77,12 +105,12 @@ body {
 }
 
 .animals-description h2 {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
-  color: #e54;
+  color: var(--primary-color);
 }
 
 .animals-description h2::before {
@@ -91,11 +119,11 @@ body {
   width: 40px;
   height: 10px;
   margin-right: 10px;
-  background: #fb5;
+  background: var(--secondary-color);
 }
 
 .animals-description p {
-  font-family: Helvetica, Arial;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -116,17 +144,17 @@ body {
 }
 
 .animals-list::-webkit-scrollbar {
-  width: 18px;
+  width: 16px;
 }
 
 .animals-list::-webkit-scrollbar-thumb {
-  background: #fb5;
-  border-left: 4px solid #faf6ed;
-  border-right: 4px solid #faf6ed;
+  background: var(--secondary-color);
+  border-left: 6px solid var(--bg-color);
+  border-right: 6px solid var(--bg-color);
 }
 
 .animals-list::-webkit-scrollbar-track {
-  background: #faf6ed;
+  background: var(--bg-color);
 }
 
 .animals-description {
@@ -142,11 +170,11 @@ body {
 }
 
 .faq-list dt {
-  font-family: "IBM Plax Mono", monospace;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #e54;
+  color: var(--primary-color);
 }
 
 .faq-list dt::before {
@@ -155,11 +183,11 @@ body {
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #fb5;
+  background: var(--secondary-color);
 }
 
 .faq-list dd {
-  font-family: Helvetica, Arial;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 0.5rem;
   margin-left: 30px;
 }
@@ -183,18 +211,18 @@ body {
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #fb5;
+  background: var(--secondary-color);
 }
 
 .copy {
   grid-column: 3 / 5;
   margin-bottom: 2rem;
-  background: #fb5;
+  background: var(--secondary-color);
 }
 
 .copy p {
   padding: 20px;
-  font-family: "IBM Plax Mono", monospace;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }
 
@@ -281,19 +309,16 @@ body {
 }
 
 [data-anime="accordion"] dt::after {
-  content: "˅";
+  content: "▼";
+  transition: all 0.3s;
   margin-left: 10px;
-  color: #666;
+  color: var(--primary-color);
   position: absolute;
-  top: 5px;
+  top: 2px;
 }
 
 [data-anime="accordion"] dt.active::after {
-  content: "˄";
-  margin-left: 10px;
-  color: #666;
-  position: absolute;
-  top: 5px;
+  transform: rotate(-180deg);
 }
 
 [data-anime="accordion"] dd.active {
