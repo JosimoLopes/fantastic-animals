@@ -2,13 +2,12 @@
   position: absolute;
   z-index: 9;
   background: rgb(0, 0, 0, 0.6);
-  box-shadow: 0 0 0 2px #fb5, 0 0 0 6px rgb(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 2px var(--secondary-color), 0 0 0 6px rgb(0, 0, 0, 0.6);
   padding: 0.5rem;
   color: #fff;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 0.875rem;
   max-width: 9.375rem;
   box-sizing: border-box;
-  border-radius: 2px;
 }
