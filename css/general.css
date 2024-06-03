@@ -202,7 +202,8 @@ body {
 
 .details li {
   margin-bottom: 1rem;
-  font-family: Helvetica, Arial;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
 
 .details li::before {
@@ -212,6 +213,11 @@ body {
   height: 10px;
   margin-right: 10px;
   background: var(--secondary-color);
+}
+
+.btc-rate {
+  background-color: var(--secondary-color);
+  padding: 0 8px;
 }
 
 .copy {
