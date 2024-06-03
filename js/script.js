@@ -8,6 +8,7 @@ import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initBusinessHours from "./modules/business-hours.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
+import initFetchBc from "./modules/fetch-bc.js";
 
 initSubtleScroll();
 initScrollAnimation();
@@ -19,3 +20,4 @@ initDropdownMenu();
 initMenuMobile();
 initBusinessHours();
 initFetchAnimals();
+initFetchBc();
