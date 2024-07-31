@@ -1,2 +1,3 @@
 # Fantastic Animals
-It is a project developed over the Origamid JavaScript Course.
+
+A project developed over the Origamid JavaScript Course.

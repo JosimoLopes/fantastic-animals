@@ -7,8 +7,6 @@ export default function initBusinessHours() {
   const currentDay = dateNow.getDay();
   const currentHour = dateNow.getHours();
 
-  console.log(hoursWeek[1]);
-
   function openClosedStatus() {
     const isWeekDay = weekDays.indexOf(currentDay) !== -1;
     const isBusinessHour = currentHour >= hoursWeek[0] && currentHour < hoursWeek[1];
@@ -17,8 +15,6 @@ export default function initBusinessHours() {
     } else {
       businessHours.classList.add("closed");
     }
-
-    console.log(isBusinessHour);
   }
 
   openClosedStatus();

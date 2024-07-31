@@ -11,13 +11,6 @@ export default function initSubtleScroll() {
         behavior: "smooth",
         block: "start",
       });
-
-      // Alternative way
-      // const section = document.querySelector(href).offsetTop;
-      // window.scrollTo({
-      //   top: section,
-      //   behavior: "smooth",
-      // });
     });
   });
 }
