@@ -1,7 +1,7 @@
 import SubtleScroll from "./modules/subtle-scroll.js";
 import Accordion from "./modules/accordion-list.js";
+import TabNav from "./modules/tabnav.js";
 import initScrollAnimation from "./modules/scroll-anima.js";
-import initTabNav from "./modules/tabnav.js";
 import initModal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
@@ -16,8 +16,10 @@ subtleScroll.init();
 const accordion = new Accordion("[data-anime='accordion'] dt");
 accordion.init();
 
+const tabnav = new TabNav("[data-tab='menu'] li", "[data-tab='content'] section");
+tabnav.init();
+
 initScrollAnimation();
-initTabNav();
 initModal();
 initTooltip();
 initDropdownMenu();
