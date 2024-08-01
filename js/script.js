@@ -1,4 +1,4 @@
-import initSubtleScroll from "./modules/subtle-scroll.js";
+import SubtleScroll from "./modules/subtle-scroll.js";
 import initScrollAnimation from "./modules/scroll-anima.js";
 import initTabNav from "./modules/tabnav.js";
 import initAccordion from "./modules/accordion-list.js";
@@ -10,7 +10,8 @@ import initBusinessHours from "./modules/business-hours.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
 import initFetchBc from "./modules/fetch-bc.js";
 
-initSubtleScroll();
+const subtleScroll = new SubtleScroll('a[href^="#"]');
+subtleScroll.init();
 initScrollAnimation();
 initTabNav();
 initAccordion();

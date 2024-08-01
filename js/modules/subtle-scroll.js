@@ -1,16 +1,35 @@
-export default function initSubtleScroll() {
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
+export default class SubtleScroll {
+  constructor(links, options) {
+    this.links = document.querySelectorAll(links);
 
-  internalLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const href = event.currentTarget.getAttribute("href");
-      const section = document.querySelector(href);
+    if (options === undefined) {
+      this.options = { behavior: "smooth", block: "start" };
+    } else {
+      this.options = options;
+    }
 
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    this.scrollToSection = this.scrollToSection.bind(this);
+  }
+
+  scrollToSection(e) {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+
+    section.scrollIntoView(this.options);
+  }
+
+  addLinkEvent() {
+    this.links.forEach((link) => {
+      link.addEventListener("click", this.scrollToSection);
     });
-  });
+  }
+
+  init() {
+    if (this.links.length) {
+      this.addLinkEvent();
+    }
+
+    return this;
+  }
 }
