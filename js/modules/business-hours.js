@@ -1,21 +1,40 @@
-export default function initBusinessHours() {
-  const businessHours = document.querySelector("[data-week]");
-  const weekDays = businessHours.dataset.week.split(",").map(Number);
-  const hoursWeek = businessHours.dataset.hours.split(",").map(Number);
+export default class BusinessHours {
+  constructor(businessHours) {
+    this.businessHours = document.querySelector(businessHours);
+  }
 
-  const dateNow = new Date();
-  const currentDay = dateNow.getDay();
-  const currentHour = dateNow.getHours();
+  businessHoursData() {
+    this.weekDays = this.businessHours.dataset.week.split(",").map(Number);
+    this.hoursWeek = this.businessHours.dataset.hours.split(",").map(Number);
+  }
 
-  function openClosedStatus() {
-    const isWeekDay = weekDays.indexOf(currentDay) !== -1;
-    const isBusinessHour = currentHour >= hoursWeek[0] && currentHour < hoursWeek[1];
-    if (isWeekDay && isBusinessHour) {
-      businessHours.classList.add("open");
+  currentData() {
+    this.dateNow = new Date();
+    this.currentDay = this.dateNow.getDay();
+    this.currentHour = this.dateNow.getHours();
+    // this.currentHour = dateNow.getUTCHours() - 3;
+  }
+
+  isOpen() {
+    const isWeekDay = this.weekDays.indexOf(this.currentDay) !== -1;
+    const isBusinessHour = this.currentHour >= this.hoursWeek[0] && this.currentHour < this.hoursWeek[1];
+
+    return isWeekDay && isBusinessHour;
+  }
+
+  openStatus() {
+    if (this.isOpen()) {
+      this.businessHours.classList.add("open");
     } else {
-      businessHours.classList.add("closed");
+      this.businessHours.classList.add("closed");
     }
   }
 
-  openClosedStatus();
+  init() {
+    if (this.businessHours) {
+      this.businessHoursData();
+      this.currentData();
+      this.openStatus();
+    }
+  }
 }
