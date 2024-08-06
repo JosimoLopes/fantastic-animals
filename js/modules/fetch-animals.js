@@ -1,4 +1,4 @@
-import AnimaNumbers from "./anima-numbers.js";
+import AnimaNumbers from "./numbers-animation.js";
 
 export default function fetchAnimals(url, target) {
   const sectionNumbers = document.querySelector(target);
