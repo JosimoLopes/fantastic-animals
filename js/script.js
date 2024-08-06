@@ -8,7 +8,7 @@ import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initBusinessHours from "./modules/business-hours.js";
 import fetchAnimals from "./modules/fetch-animals.js";
-import initFetchBc from "./modules/fetch-bc.js";
+import fetchBc from "./modules/fetch-bc.js";
 
 const subtleScroll = new SubtleScroll('a[href^="#"]');
 subtleScroll.init();
@@ -29,5 +29,5 @@ initScrollAnimation();
 initDropdownMenu();
 initMenuMobile();
 initBusinessHours();
-initFetchBc();
 fetchAnimals("./animals-api.json", ".numbers-grid");
+fetchBc("https://blockchain.info/ticker", ".btc-rate");
