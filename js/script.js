@@ -1,7 +1,7 @@
 import SubtleScroll from "./modules/subtle-scroll.js";
 import Accordion from "./modules/accordion-list.js";
-import TabNav from "./modules/tabnav.js";
-import initScrollAnimation from "./modules/scroll-anima.js";
+import TabNav from "./modules/tab-nav.js";
+import ScrollAnimation from "./modules/scroll-animation.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
@@ -16,8 +16,8 @@ subtleScroll.init();
 const accordion = new Accordion("[data-anime='accordion'] dt");
 accordion.init();
 
-const tabnav = new TabNav("[data-tab='menu'] li", "[data-tab='content'] section");
-tabnav.init();
+const tabNav = new TabNav("[data-tab='menu'] li", "[data-tab='content'] section");
+tabNav.init();
 
 const modal = new Modal('[data-modal="open"]', '[data-modal="close"]', '[data-modal="container"]');
 modal.init();
@@ -25,7 +25,9 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-initScrollAnimation();
+const scrollAnimation = new ScrollAnimation("[data-anime='scroll']");
+scrollAnimation.init();
+
 initDropdownMenu();
 initMenuMobile();
 initBusinessHours();
